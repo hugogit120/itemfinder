@@ -7,9 +7,14 @@ import Navbar from "./components/Navbar";
 import Signup from './pages/Signup';		//		<--	Import 
 import Login from './pages/Login';			//		<--	Import 
 import Private from './pages/Private';	//		<--	Import 
+import Index from './pages/Index';	//		<--	Import 
+import MyProfile from './pages/profile/MyProfile'
+import ProductDetails from './pages/products/ProductDetails'
 
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
+import ProfileRoute from "./components/Profile"
+import AddProduct from "./pages/products/AddProduct";
 
 class App extends Component {
   render() {
@@ -18,12 +23,15 @@ class App extends Component {
 
         <div className="container">
           <Navbar />
-          <h1>Basic React Authentication</h1>
-
           <Switch>
-            <AnonRoute path="/signup" component={Signup} />
-            <AnonRoute path="/login" component={Login} />
-            <PrivateRoute path="/private" component={Private} />
+            <Route path="/" exact component={Index} />
+            <Route path='/product/:id' exact component={ProductDetails} />
+            <PrivateRoute path="/private" exact component={Private} />
+            <PrivateRoute path="/add-product" exact component={AddProduct} />
+            <PrivateRoute path="/my-profile" exact component={MyProfile} />
+            <AnonRoute path="/signup" exact component={Signup} />
+            <AnonRoute path="/login" exact component={Login} />
+            {/*           <ProfileRoute path="/profile/:id" component={MyProfile} /> */}
           </Switch>
         </div>
 
