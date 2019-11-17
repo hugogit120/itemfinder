@@ -1,18 +1,33 @@
 import React, { Component } from "react";
 import apiService from "../../services/Api";
 
-class AddProduct extends Component {
-    state = { title: "", image: "", description: "", price: "", category: "" };
+class EditProduct extends Component {
 
-    addProduct = async (product) => {
-        const newProduct = await apiService.createProduct(product)
-        console.log(newProduct)
+    state = {
+        title: "",
+        image: "",
+        description: "",
+        price: "",
+        category: ""
+    }
+
+    async componentDidMount() {
+        const { id } = this.props.match.params
+        const product = await apiService.getOneProduct(id)
+        const { title, image, description, price, category } = product.data
+        this.setState({ title, image, description, price, category })
+    }
+
+    editProduct = async (product) => {
+        const { id } = this.props.match.params
+        const editedProduct = await apiService.editProduct(product, id)
+        console.log(editedProduct)
     }
 
     handleFormSubmit = event => {
         event.preventDefault();
         const { title, image, description, price, category } = this.state
-        this.addProduct({ title, image, description, price, category });
+        this.editProduct({ title, image, description, price, category });
     };
 
     handleChange = event => {
@@ -41,11 +56,11 @@ class AddProduct extends Component {
                     <label>Category:</label>
                     <input type="text" name="category" value={category} onChange={this.handleChange} />
 
-                    <input type="submit" value="createProduct" />
+                    <input type="submit" value="Save changes" />
                 </form>
             </div>
         );
     }
 }
 
-export default AddProduct;
+export default EditProduct;

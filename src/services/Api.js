@@ -23,6 +23,12 @@ class ApiService {
         const oneProduct = await this.api.post('/products', { title, image, description, price, category })
         return oneProduct
     }
+    async editProduct(product, productId) {
+        const { title, image, description, price, category } = product
+        const oneProduct = await this.api.put(`/products/${productId}`, { title, image, description, price, category })
+        return oneProduct
+    }
+
 }
 
 const apiService = new ApiService()

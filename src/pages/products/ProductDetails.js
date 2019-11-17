@@ -25,7 +25,7 @@ class ProductDetails extends Component {
 
                         <h3>{product.title}</h3>
 
-                        {this.props.isLoggedin && this.props.user._id === product.owner ? <Link to={'/'}>edit</Link> : null}
+                        {this.props.isLoggedin && this.props.user._id === product.owner ? <Link to={`/product/${product._id}/edit`}>edit</Link> : null}
                     </article>
 
                     : <p>pepe...</p>}

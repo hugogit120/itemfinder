@@ -15,6 +15,7 @@ import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
 import ProfileRoute from "./components/Profile"
 import AddProduct from "./pages/products/AddProduct";
+import EditProduct from "./pages/products/EditProduct";
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
             <Route path='/product/:id' exact component={ProductDetails} />
             <PrivateRoute path="/private" exact component={Private} />
             <PrivateRoute path="/add-product" exact component={AddProduct} />
+            <PrivateRoute path="/product/:id/edit" exact component={EditProduct} />
             <PrivateRoute path="/my-profile" exact component={MyProfile} />
             <AnonRoute path="/signup" exact component={Signup} />
             <AnonRoute path="/login" exact component={Login} />
