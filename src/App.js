@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import AuthProvider from "./lib/AuthProvider";
-
 import Navbar from "./components/Navbar";
-
 import Signup from './pages/Signup';		//		<--	Import 
 import Login from './pages/Login';			//		<--	Import 
 import Private from './pages/Private';	//		<--	Import 

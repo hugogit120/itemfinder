@@ -3,13 +3,7 @@ import apiService from "../../services/Api";
 
 class EditProduct extends Component {
 
-    state = {
-        title: "",
-        image: "",
-        description: "",
-        price: "",
-        category: ""
-    }
+    state = { title: "", image: "", description: "", price: "", category: "" };
 
     async componentDidMount() {
         const { id } = this.props.match.params
@@ -53,8 +47,14 @@ class EditProduct extends Component {
                     <label>Price:</label>
                     <input type="number" name="price" value={price} onChange={this.handleChange} />
 
-                    <label>Category:</label>
-                    <input type="text" name="category" value={category} onChange={this.handleChange} />
+                    <label>
+                        Category:
+          <select value={category} onChange={this.handleChange}>
+                            <option value="electronics">electronics</option>
+                            <option value="vehicle" >vehicle</option>
+                            <option value="computer">computer</option>
+                        </select>
+                    </label>
 
                     <input type="submit" value="Save changes" />
                 </form>

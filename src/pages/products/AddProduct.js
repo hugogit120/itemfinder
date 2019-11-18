@@ -38,8 +38,14 @@ class AddProduct extends Component {
                     <label>Price:</label>
                     <input type="number" name="price" value={price} onChange={this.handleChange} />
 
-                    <label>Category:</label>
-                    <input type="text" name="category" value={category} onChange={this.handleChange} />
+                    <label>
+                        Category:
+          <select value={category} onChange={this.handleChange}>
+                            <option value="electronics">electronics</option>
+                            <option value="vehicle">vehicle</option>
+                            <option value="computer">computer</option>
+                        </select>
+                    </label>
 
                     <input type="submit" value="createProduct" />
                 </form>

@@ -16,9 +16,11 @@ class Navbar extends Component {
               <li><button onClick={logout}>Logout</button></li>
               <li><Link to="/my-profile"> <button>Profile</button> </Link></li>
               <li><Link to="/add-product"> <button>Add Product</button> </Link></li>
+              <li><Link to="/"> <button>Home</button> </Link></li>
             </ul>)
             :
             (<div>
+              <Link to="/"> <button>Home</button> </Link>
               <Link to="/login"> <button>Login</button> </Link>
               <br />
               <Link to="/signup"> <button>Signup</button> </Link>
