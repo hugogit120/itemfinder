@@ -14,6 +14,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import ProfileRoute from "./components/Profile"
 import AddProduct from "./pages/products/AddProduct";
 import EditProduct from "./pages/products/EditProduct";
+import './App.css'
 
 class App extends Component {
   render() {

@@ -29,6 +29,15 @@ class ApiService {
         return oneProduct
     }
 
+    async addComment(question, productId) {
+        console.log(question)
+        const comment = {
+            body: question,
+        }
+        const newComment = await this.api.post(`/comments/add/${productId}`, comment)
+        return newComment
+    }
+
 }
 
 const apiService = new ApiService()

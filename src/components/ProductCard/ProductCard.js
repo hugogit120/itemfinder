@@ -14,12 +14,15 @@ class ProductCard extends Component {
                 {product ?
                     <article className='boxshadow' >
                         <Link to={`/product/${product._id}`} >
-                            <div>
+                            <div style={{ display: "flex" }}>
 
                                 <img src={product.image} />
 
-                                <h3>{product.title}</h3>
-
+                                <div >
+                                    <label>{product.title}</label>
+                                    <label>{product.price}</label>
+                                    <label>{product.owner._id}</label>
+                                </div>
                             </div>
                         </Link>
 

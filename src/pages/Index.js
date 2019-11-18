@@ -45,7 +45,7 @@ class Index extends Component {
                     />
                 </div>
                 <h1>Products</h1>
-                <section style={{ display: "flex", flexFlow: "row wrap" }}>
+                <section style={{ display: "flex", flexDirection: "column" }}>
                     {filteredProducts ?
                         filteredProducts.map((product, index) => {
                             return <ProductCard key={index} product={product}>{product.title}</ProductCard>
