@@ -15,7 +15,7 @@
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-img {
+.cardImage {
     width: 50%;
     height: 100%;
     border-radius: 15px 0 0 15px; 
@@ -23,10 +23,35 @@ img {
 
 label {
   color: #01ABA4;
+  margin-left: 10px;
 
 }
 
-a {
+.label1 {
+  word-wrap: break-word;
+  height: 40px;
+  width: 149px;
+  font-size: 13px;
+
+}
+
+.label2 {
+  color: red;
+  font-size: 20px;
+}
+
+.label3{
+  word-wrap: break-word;
+  width: 149px;
+}
+
+.labelContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.link-to-product {
   height: 50%;
   text-decoration: none;
 }

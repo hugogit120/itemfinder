@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import { withAuth } from "../../lib/AuthProvider";
 
-export default class AddQuestion extends Component {
+class AddQuestion extends Component {
     state = {
         formStatus: false,
-        questionContent: ''
+        questionContent: '',
     }
 
     showAddForm = () => {
@@ -22,6 +23,8 @@ export default class AddQuestion extends Component {
         event.preventDefault();
         const { questionContent } = this.state
         this.props.addNewQuestion(questionContent)
+        this.setState({ questionContent: "" })
+
 
     }
 
@@ -46,3 +49,5 @@ export default class AddQuestion extends Component {
         )
     }
 }
+
+export default withAuth(AddQuestion)

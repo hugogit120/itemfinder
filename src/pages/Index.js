@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withAuth } from "../lib/AuthProvider";
 import apiService from "../services/Api"
 import ProductCard from '../components/ProductCard/ProductCard';
+import Lupa from '../images/lupa.png'
 
 class Index extends Component {
 
@@ -36,9 +37,10 @@ class Index extends Component {
 
         return (
             <div>
-                <div className='pa2'>
+                <div style={{ display: "flex", justifyContent: "space-around", borderRadius: "15px", boxShadow: "0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)", margin: "25px", height: "40px", alignItems: "center" }}>
+                    <img src={Lupa} style={{ width: "10%" }} />
                     <input
-                        className='pa3 ba b--green bg-lightest-blue'
+                        style={{ textAlign: "center", fontSize: "17px", width: "74%", height: "31px", background: "#EAEFF3", border: "0", outline: "none" }}
                         type='search'
                         placeholder='search products'
                         onChange={this.onSearchChange}

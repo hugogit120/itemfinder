@@ -1,0 +1,36 @@
+.product-image-detail {
+    width: 350px;
+    border-radius: 25px;
+}
+
+.image-detail-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.Price-detail {
+    font-size: 33px;
+    display: flex;
+    color: red;
+    justify-content: flex-end;
+    margin: 15px 30px 0px 0px;
+}
+
+.title-detail {
+    font-size: 25px;
+    text-align: center;
+    color: #01ABA4;
+    margin: 2vh
+}
+
+.detail-body {
+    margin: 10px;
+    color: gray;
+    font-size: 20px;
+}
+
+.comments {
+    height: 264px;
+    overflow: scroll;
+}

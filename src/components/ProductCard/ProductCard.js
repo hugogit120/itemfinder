@@ -13,15 +13,15 @@ class ProductCard extends Component {
             <>
                 {product ?
                     <article className='boxshadow' >
-                        <Link to={`/product/${product._id}`} >
+                        <Link className='link-to-product' to={`/product/${product._id}`} >
                             <div style={{ display: "flex" }}>
 
-                                <img src={product.image} />
+                                <img src={product.image} className='cardImage' />
 
-                                <div >
-                                    <label>{product.title}</label>
-                                    <label>{product.price}</label>
-                                    <label>{product.owner._id}</label>
+                                <div className='labelContainer'>
+                                    <label className='label1'>{product.title}</label>
+                                    <label className='label2'>{product.price}</label>
+                                    <label className='label3'>{product.owner.username}</label>
                                 </div>
                             </div>
                         </Link>

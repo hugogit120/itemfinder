@@ -29,13 +29,35 @@ class ApiService {
         return oneProduct
     }
 
+    async buyProduct(productId) {
+        const user = await this.api.patch(`/users/buys/${productId}`, {})
+        return user
+    }
+
+    async getUserProducts() {
+        const products = await this.api.get('/user/products')
+        return products
+    }
+
+    async getUserBuys() {
+        const user = await this.api.get('/user/buys')
+        return user
+    }
+
     async addComment(question, productId) {
-        console.log(question)
         const comment = {
             body: question,
         }
         const newComment = await this.api.post(`/comments/add/${productId}`, comment)
-        return newComment
+        return newComment.data
+    }
+
+    async answerComment(answer, commentId) {
+        const comment = {
+            answer,
+        }
+        const newComment = await this.api.patch(`/comments/${commentId}`, comment)
+        return newComment.data
     }
 
 }

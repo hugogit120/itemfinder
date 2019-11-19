@@ -1,0 +1,9 @@
+.question-box {
+    background-color: white;
+}
+
+.question {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}

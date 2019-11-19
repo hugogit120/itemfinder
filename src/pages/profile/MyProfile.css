@@ -1,0 +1,20 @@
+.image-in-profile {
+    border-radius: 50%;
+    width: 15vh;
+    height: 15vh;
+
+}
+
+.myProfile-Name {
+    font-size: 30px;
+    color: #01ABA4;
+    margin-left: 10px;
+    font-weight: 900;
+}
+
+.topPartProfile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}

@@ -32,7 +32,9 @@ class Navbar extends Component {
 }
 
 const navStyle = {
-  background: '#686de0'
+  background: '#29374E',
+  height: '5vh',
+
 }
 
 const ulStyle = {
