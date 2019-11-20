@@ -25,7 +25,7 @@ class App extends Component {
         <div >
           <Switch>
             <Route path="/" exact component={Index} />
-            <Route path='/product/:id' exact component={ProductDetails} />
+            <PrivateRoute path='/product/:id' exact component={ProductDetails} />
             <PrivateRoute path="/private" exact component={Private} />
             <PrivateRoute path="/add-product" exact component={AddProduct} />
             <PrivateRoute path="/product/:id/edit" exact component={EditProduct} />

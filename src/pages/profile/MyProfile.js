@@ -9,17 +9,20 @@ import './MyProfile.css'
 class MyProfile extends Component {
 
     state = {
-        user: null
+        user: null,
+        products: null
     }
 
     async componentDidMount() {
         const user = await apiService.getOneProfile(this.props.user._id)
-        this.setState({ user })
+        const products = await apiService.getUserProducts()
+        console.log(products)
+        this.setState({ user, products })
     }
 
     render() {
-        const { username, fullName, email, phone, accountNumber, direction, avatar } = this.props.user
-        const { user } = this.state
+        const { fullName, email, phone, avatar } = this.props.user
+        const { user, products } = this.state
 
         return (
             <section>
@@ -30,11 +33,11 @@ class MyProfile extends Component {
                             {fullName}
                         </label>
                         <label className="myProfile-Name">
-                            <FontAwesomeIcon style={{ color: "black" }} icon={faMobileAlt} />
+                            <FontAwesomeIcon style={{ color: "black", marginRight: "10px", fontSize: "20px" }} icon={faMobileAlt} />
                             {phone}
                         </label>
                         <label className="myProfile-Name">
-                            <FontAwesomeIcon style={{ color: "black" }} icon={faEnvelope} />
+                            <FontAwesomeIcon style={{ color: "black", marginRight: "10px", fontSize: "20px" }} icon={faEnvelope} />
                             {email}
                         </label>
                     </div>
@@ -45,6 +48,8 @@ class MyProfile extends Component {
 
                 <hr style={{ margin: "20px" }} />
 
+                <tag style={{ color: "#29374E", marginLeft: "38px" }} className="myProfile-Name">Buyed Products</tag>
+
                 <section className="my-buys">
                     {user ? user.buys.map(buy => {
                         return (
@@ -53,6 +58,17 @@ class MyProfile extends Component {
                     }) : <p>loading....</p>}
                 </section>
 
+                <hr></hr>
+
+                <tag style={{ color: "#29374E", marginLeft: "38px" }} className="myProfile-Name">My products for sale</tag>
+
+                <section>
+                    {products ? products.map(product => {
+                        return (
+                            <BuyCard product={product} key={product._id} />
+                        )
+                    }) : <p>loading....</p>}
+                </section>
             </section>
         );
     }

@@ -21,7 +21,7 @@ class ApiService {
     async createProduct(product) {
         const { title, image, description, price, category } = product
         const oneProduct = await this.api.post('/products', { title, image, description, price, category })
-        return oneProduct
+        return oneProduct.data
     }
     async editProduct(product, productId) {
         const { title, image, description, price, category } = product
@@ -36,7 +36,7 @@ class ApiService {
 
     async getUserProducts() {
         const products = await this.api.get('/user/products')
-        return products
+        return products.data
     }
 
     async getOneProfile(id) {

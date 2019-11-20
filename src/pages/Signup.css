@@ -1,0 +1,60 @@
+form {
+    font-size: 0.8em;
+    margin: 0 auto;
+    width: 300px;
+    padding: 10px;
+    border-radius: 3px;
+    
+    }
+    
+    .textlabel{
+        font-size: 20px;
+    
+    }
+    
+    .login-button{
+        background: #29374E;
+        width: 48%;
+        margin: 20px;
+        border: 1px;
+        border-radius: 20px;
+        color: white;
+        height: 5vh;
+        font-size: 26px;
+    }
+    
+    h1 {
+    text-align: center;
+    }
+    
+    .input, textarea{
+        outline: none;
+        border: 30;
+    
+    }
+    
+    .field{
+        border: solid 3px #18A383;
+        font-size: 30px ;
+        width: 280px;
+        color: #18A383;
+        border-radius: 5px;
+        box-shadow: 3px 3px ;
+    }
+    
+    .field:focus{
+        border-color: #18A383
+    }
+    
+    
+    .center-content{
+        text-align: center;
+    
+    }
+    
+    .login-container {
+        display: flex;
+        flex-direction: column;;
+        align-items: center;
+    }
+    

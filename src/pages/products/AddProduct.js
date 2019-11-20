@@ -7,8 +7,8 @@ class AddProduct extends Component {
     state = { title: "", image: "", description: "", price: "", category: "", image: "" };
 
     addProduct = async (product) => {
-        const newProduct = await apiService.createProduct(product)
-        console.log(newProduct)
+        const newProduct = await apiService.createProduct(product);
+        this.props.history.push(`/product/${newProduct._id}`);
     }
 
     handleFormSubmit = event => {
@@ -59,21 +59,21 @@ class AddProduct extends Component {
                     <input className="create-product-input" type="text" name="title" value={title} onChange={this.handleChange} />
 
                     <label>Description:</label>
-                    <textarea className="create-product-input-description" type="text" name="description" value={description} onChange={this.handleChange} />
+                    <textarea className="form-control-lg" type="text" name="description" value={description} onChange={this.handleChange} />
 
                     <label>Price:</label>
                     <input className="create-product-input" type="number" name="price" value={price} onChange={this.handleChange} />
 
-                    <label>
+                    {/* <label>
                         Category:
           <select value={category} onChange={this.handleChange}>
                             <option value="electronics">electronics</option>
                             <option value="vehicle">vehicle</option>
                             <option value="computer">computer</option>
                         </select>
-                    </label>
+                    </label> */}
 
-                    <input type="submit" value="createProduct" />
+                    <input type="submit" value="Create" />
                 </form>
             </div>
         );
