@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-import Icon from "../images/item-finder-color.svg"
+//import Logo from "../images/item-finder-color.png"
+import './Navbar.css'
 
 class Navbar extends Component {
 
@@ -11,13 +12,12 @@ class Navbar extends Component {
     return (
 
 
-
       <nav style={navStyle}>
         {
           // si el usuario está logueado, muestra el username y el botón Logout, sino muestra los botones de Login y Signup
           isLoggedin ?
-            (<nav className="navbar navbar-expand-lg navbar-light bg-29374E navStyle">
-              <image >{Icon}</image>
+            (<nav className="navbar navbar-expand-lg navbar-dark bg-29374E navStyle">
+              <img width="170" src="images/item-finder-blanco.png" />
               <button id="navbar-button" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
