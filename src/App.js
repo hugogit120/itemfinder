@@ -21,8 +21,8 @@ class App extends Component {
     return (
       <AuthProvider>        {/*       <---  Wrap components with AuthProvider, para que puedan ser consumers       */}
 
-        <div className="container">
-          <Navbar />
+        <Navbar />
+        <div >
           <Switch>
             <Route path="/" exact component={Index} />
             <Route path='/product/:id' exact component={ProductDetails} />

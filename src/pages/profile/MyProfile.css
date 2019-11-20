@@ -18,3 +18,9 @@
     align-items: center;
     margin-top: 30px;
 }
+
+.my-buys {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

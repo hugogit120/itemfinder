@@ -83,7 +83,7 @@ class ProductDetails extends Component {
                             })}
 
                             {this.props.isLoggedin && this.props.user._id !== product.owner ? <AddQuestion addNewQuestion={(question) => this.addNewQuestion(question)} /> : null}
-                            <BuyButton buyProduct={this.buyProduct} />
+                            {this.props.isLoggedin && this.props.user._id !== product.owner && !product.buyed ? <BuyButton buyProduct={() => this.buyProduct()} /> : null}
                         </section>
                     </>
                     : <p>pepe...</p>}

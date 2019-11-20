@@ -1,0 +1,11 @@
+.buy-card {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.buy-card-image {
+    width: 15vh;
+    border-radius: 20px;
+}

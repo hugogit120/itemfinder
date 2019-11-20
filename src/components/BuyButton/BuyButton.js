@@ -3,7 +3,7 @@ import './BuyButton.css'
 
 function BuyButton(props) {
     return (
-        <div className="float-bar" onClick={props.buyProduct}>
+        <div className="float-bar" onClick={() => props.buyProduct()}>
             <button className="buy-button">Buy</button>
         </div>
     )

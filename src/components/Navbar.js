@@ -1,23 +1,46 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
+import Icon from "../images/item-finder-color.svg"
 
 class Navbar extends Component {
+
   render() {
 
     const { user, logout, isLoggedin } = this.props;
     return (
+
+
+
       <nav style={navStyle}>
         {
           // si el usuario está logueado, muestra el username y el botón Logout, sino muestra los botones de Login y Signup
           isLoggedin ?
-            (<ul style={ulStyle}>
-              <li>username: {user.username}</li>
-              <li><button onClick={logout}>Logout</button></li>
-              <li><Link to="/my-profile"> <button>Profile</button> </Link></li>
-              <li><Link to="/add-product"> <button>Add Product</button> </Link></li>
-              <li><Link to="/"> <button>Home</button> </Link></li>
-            </ul>)
+            (<nav className="navbar navbar-expand-lg navbar-light bg-29374E navStyle">
+              <image >{Icon}</image>
+              <button id="navbar-button" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarToggler">
+                <a className="navbar-brand" href="#">{user.username}</a>
+                <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" className="nav-item">
+                    <Link className="nav-link" to="/"> Home </Link>
+                  </li>
+                  <li data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" lassName="nav-item">
+                    <Link className="nav-link" to="/my-profile">Profile</Link>
+                  </li>
+                  <li data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" className="nav-item">
+                    <Link className="nav-link" to="/add-product">Add Product </Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link onClick={logout} className="nav-link" href="#" tabIndex="-1">Logout</Link>
+                  </li>
+                </ul>
+
+              </div>
+            </nav>)
             :
             (<div>
               <Link to="/"> <button>Home</button> </Link>
@@ -33,7 +56,6 @@ class Navbar extends Component {
 
 const navStyle = {
   background: '#29374E',
-  height: '5vh',
 
 }
 

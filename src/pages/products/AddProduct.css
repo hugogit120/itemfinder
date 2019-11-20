@@ -1,0 +1,22 @@
+.create-product-container {
+    margin: 40px 10px 10px 10px;
+    font-size: 30px;
+}
+
+.create-product-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40vh;
+}
+
+.create-product-input {
+    width: 50%;
+
+    background: transparent ;
+}
+
+.create-product-input-description { 
+    height: 10vh;
+    width: 80%;
+}

@@ -30,7 +30,7 @@ class ApiService {
     }
 
     async buyProduct(productId) {
-        const user = await this.api.patch(`/users/buys/${productId}`, {})
+        const user = await this.api.patch(`/user/buys/${productId}`, {})
         return user
     }
 
@@ -39,6 +39,10 @@ class ApiService {
         return products
     }
 
+    async getOneProfile(id) {
+        const oneProfile = await this.api.get(`/user/${id}`)
+        return oneProfile.data
+    }
     async getUserBuys() {
         const user = await this.api.get('/user/buys')
         return user

@@ -25,6 +25,7 @@ class Index extends Component {
     render() {
         const { allProducts } = this.state
 
+
         let filteredProducts = allProducts;
 
         if (allProducts) {
