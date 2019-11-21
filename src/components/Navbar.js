@@ -43,9 +43,9 @@ class Navbar extends Component {
             </nav>)
             :
             (<div style={{ display: "flex", justifyContent: "space-around", height: "6vh", alignItems: "center" }} >
-              <Link to="/"> <button style={{ color: "white" }}>Home</button> </Link>
-              <Link to="/login"> <button style={{ color: "white" }}>Login</button> </Link>
-              <Link to="/signup"> <button style={{ color: "white" }}>Signup</button> </Link>
+              <Link to="/"> <button style={{ color: "white", background: "none", border: "none" }}>Home</button> </Link>
+              <Link to="/login"> <button style={{ color: "white", background: "none", border: "none" }}>Login</button> </Link>
+              <Link to="/signup"> <button style={{ color: "white", background: "none", border: "none" }}>Signup</button> </Link>
             </div>)
         }
       </nav>
