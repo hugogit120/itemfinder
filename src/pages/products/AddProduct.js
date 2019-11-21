@@ -4,7 +4,7 @@ import service from "../../services/UploadService"
 import './AddProduct.css'
 
 class AddProduct extends Component {
-    state = { title: "", image: "", description: "", price: "", category: "", image: "" };
+    state = { title: "", image: "", description: "", price: "", category: "", image: "https://cdn.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png" };
 
     addProduct = async (product) => {
         const newProduct = await apiService.createProduct(product);

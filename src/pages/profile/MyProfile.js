@@ -5,6 +5,7 @@ import apiService from "../../services/Api";
 import { faMobileAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import BuyCard from "../../components/BuyCard/BuyCard"
 import './MyProfile.css'
+import MyProductCard from "../../components/MyProductCard/MyProductCard";
 
 class MyProfile extends Component {
 
@@ -16,8 +17,16 @@ class MyProfile extends Component {
     async componentDidMount() {
         const user = await apiService.getOneProfile(this.props.user._id)
         const products = await apiService.getUserProducts()
-        console.log(products)
         this.setState({ user, products })
+    }
+
+    async productDelete(id) {
+        await apiService.deleteProduct(id)
+        let productsCopy = [...this.state.products];
+        const filtered = productsCopy.filter(product => product._id !== id);
+        this.setState({
+            products: filtered
+        })
     }
 
     render() {
@@ -65,7 +74,7 @@ class MyProfile extends Component {
                 <section>
                     {products ? products.map(product => {
                         return (
-                            <BuyCard product={product} key={product._id} />
+                            <MyProductCard product={product} remove={(id) => this.productDelete(id)} key={product._id} />
                         )
                     }) : <p>loading....</p>}
                 </section>

@@ -29,6 +29,11 @@ class ApiService {
         return oneProduct
     }
 
+    async deleteProduct(productId) {
+        const productDelete = await this.api.delete(`/products/${productId}`)
+        return productDelete
+    }
+
     async buyProduct(productId) {
         const user = await this.api.patch(`/user/buys/${productId}`, {})
         return user
