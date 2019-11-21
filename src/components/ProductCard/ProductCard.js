@@ -20,8 +20,8 @@ class ProductCard extends Component {
 
                                 <div className='labelContainer'>
                                     <label className='label1'>{product.title}</label>
-                                    <label className='label2'>{product.price}</label>
-                                    <label className='label3'>{product.owner.username}</label>
+                                    <label className='label2'>{product.price}$</label>
+                                    <label className='label3'>{product.updated_at}</label>
                                 </div>
                             </div>
                         </Link>

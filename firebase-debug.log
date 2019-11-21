@@ -1,0 +1,22 @@
+[debug] [2019-11-21T10:48:15.154Z] ----------------------------------------------------------------------
+[debug] [2019-11-21T10:48:15.156Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2019-11-21T10:48:15.156Z] CLI Version:   7.8.0
+[debug] [2019-11-21T10:48:15.156Z] Platform:      darwin
+[debug] [2019-11-21T10:48:15.156Z] Node Version:  v12.13.0
+[debug] [2019-11-21T10:48:15.157Z] Time:          Thu Nov 21 2019 11:48:15 GMT+0100 (Central European Standard Time)
+[debug] [2019-11-21T10:48:15.158Z] ----------------------------------------------------------------------
+[debug] [2019-11-21T10:48:15.158Z] 
+[debug] [2019-11-21T10:48:15.172Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-21T10:48:15.172Z] > authorizing via signed-in user
+[debug] [2019-11-21T10:48:15.173Z] [iam] checking project itemfinder-76f0c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-11-21T10:48:15.175Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/itemfinder-76f0c:testIamPermissions  
+
+[debug] [2019-11-21T10:48:28.342Z] Error: socket hang up
+    at connResetException (internal/errors.js:570:14)
+    at TLSSocket.socketOnEnd (_http_client.js:440:23)
+    at TLSSocket.emit (events.js:215:7)
+    at TLSSocket.EventEmitter.emit (domain.js:476:20)
+    at endReadableNT (_stream_readable.js:1183:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+[error] 
+[error] Error: Server Error. socket hang up

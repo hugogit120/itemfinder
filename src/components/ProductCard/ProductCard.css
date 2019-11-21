@@ -29,9 +29,10 @@ label {
 
 .label1 {
   word-wrap: break-word;
-  height: 40px;
+  height: 1vhpx;
   width: 149px;
-  font-size: 13px;
+  font-size: 25px;
+  font-weight: 900;
 
 }
 

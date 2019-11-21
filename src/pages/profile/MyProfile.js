@@ -31,6 +31,7 @@ class MyProfile extends Component {
 
     render() {
         const { fullName, email, phone, avatar } = this.props.user
+        console.log(this.props.user)
         const { user, products } = this.state
 
         return (
