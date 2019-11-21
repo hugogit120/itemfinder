@@ -58,7 +58,7 @@ class MyProfile extends Component {
 
                 <hr style={{ margin: "20px" }} />
 
-                <tag style={{ color: "#29374E", marginLeft: "38px" }} className="myProfile-Name">Buyed Products</tag>
+                <label style={{ color: "#29374E", marginLeft: "38px" }} className="myProfile-Name">Buyed Products</label>
 
                 <section className="my-buys">
                     {user ? user.buys.map(buy => {
@@ -70,7 +70,7 @@ class MyProfile extends Component {
 
                 <hr></hr>
 
-                <tag style={{ color: "#29374E", marginLeft: "38px" }} className="myProfile-Name">My products for sale</tag>
+                <label style={{ color: "#29374E", marginLeft: "38px" }} className="myProfile-Name">My products for sale</label>
 
                 <section>
                     {products ? products.map(product => {

@@ -17,7 +17,7 @@ class Navbar extends Component {
           // si el usuario está logueado, muestra el username y el botón Logout, sino muestra los botones de Login y Signup
           isLoggedin ?
             (<nav className="navbar navbar-expand-lg navbar-dark bg-29374E navStyle">
-              <img width="170" src="images/item-finder-blanco.png" />
+              <img width="170" src="../images/item-finder-blanco.png" />
               <button id="navbar-button" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
@@ -35,7 +35,7 @@ class Navbar extends Component {
                   </li>
 
                   <li className="nav-item">
-                    <Link onClick={logout} className="nav-link" href="#" tabIndex="-1">Logout</Link>
+                    <Link to="/" onClick={logout} className="nav-link" href="#" tabIndex="-1">Logout</Link>
                   </li>
                 </ul>
 

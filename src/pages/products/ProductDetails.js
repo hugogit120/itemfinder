@@ -61,12 +61,12 @@ class ProductDetails extends Component {
                 {product ?
                     <>
                         <article>
+                            <h3 className='title-detail'>{product.title}</h3>
                             <div className="image-detail-container">
                                 <img className="product-image-detail" src={product.image} />
                             </div>
 
                             <h2 className="Price-detail">{product.price}$</h2>
-                            <h3 className='title-detail'>{product.title}</h3>
                             <p className='detail-body'>{product.description}</p>
 
                             {this.props.isLoggedin && this.props.user._id === product.owner ? <Link to={`/product/${product._id}/edit`}>edit</Link> : null}

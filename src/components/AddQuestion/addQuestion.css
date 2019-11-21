@@ -1,0 +1,27 @@
+.ask-button{
+    background-color: #29374d;
+    color: white;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 10px;
+}
+
+.ask-div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-question{
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 0;
+    font-size: 18px;
+}
+
+.buttons-container{
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,21 +1,14 @@
 .float-bar {
     display: flex;
-    justify-content: center;
     border-radius: 20px;
     font-family: sans-serif;
     background: #01ABA4;
     padding: 5px;
     width: 50%;
-    margin-bottom: 25px;
-    position: fixed;
-    bottom: 0px;
-    left: 25%;
+    margin: 100px 100px 20px 100px;
 }
 
 .float-bar button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
     width: 100%;
     border-radius: 20px;

@@ -35,13 +35,12 @@ class Index extends Component {
             //console.log(filteredProducts);
         }
 
-
         return (
             <div>
-                <div style={{ display: "flex", justifyContent: "space-around", borderRadius: "15px", boxShadow: "0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)", margin: "25px", height: "40px", alignItems: "center" }}>
+                <div style={{ display: "flex", justifyContent: "space-around", backgroundColor: "white", borderRadius: "10px", boxShadow: "0 14px 28px rgba(219, 236, 255, 0.25), 0 10px 10px rgba(185, 175, 175, 0.22)", margin: "25px", height: "40px", alignItems: "center" }}>
                     <img width="30px" src="images/lupa.png" style={{ width: "10%" }} />
                     <input
-                        style={{ textAlign: "center", fontSize: "17px", width: "74%", height: "31px", background: "#EAEFF3", border: "0", outline: "none" }}
+                        style={{ textAlign: "center", fontSize: "17px", width: "74%", height: "31px", background: "white", border: "0", outline: "none" }}
                         type='search'
                         placeholder='search products'
                         onChange={this.onSearchChange}

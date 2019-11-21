@@ -1,6 +1,6 @@
 .boxshadow {
   background: #fff;
-  border-radius: 15px;
+  border-radius: 10px;
   display: flex;
   float: left;
   height: 170px;
@@ -8,11 +8,11 @@
   width: 43vh;
   height: 100%;
   margin: 2.5%;
-  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  -ms-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  -o-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 0 14px 28px rgba(219, 236, 255, 0.25), 0 10px 10px rgba(185, 175, 175, 0.22);
+  -moz-box-shadow: 0 14px 28px rgba(219, 236, 255, 0.25), 0 10px 10px rgba(185, 175, 175, 0.22);
+  -ms-box-shadow: 0 14px 28px rgba(219, 236, 255, 0.25), 0 10px 10px rgba(185, 175, 175, 0.22);
+  -o-box-shadow: 0 14px 28px rgba(219, 236, 255, 0.25), 0 10px 10px rgba(185, 175, 175, 0.22);
+  box-shadow: 0 14px 28px rgba(219, 236, 255, 0.25), 0 10px 10px rgba(185, 175, 175, 0.22);
 }
 
 .cardImage {
@@ -31,13 +31,12 @@ label {
   word-wrap: break-word;
   height: 1vhpx;
   width: 149px;
-  font-size: 25px;
-  font-weight: 900;
-
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .label2 {
-  color: red;
+  color: #29374d;
   font-size: 20px;
 }
 

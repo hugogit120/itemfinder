@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withAuth } from "../../lib/AuthProvider";
+import './addQuestion.css'
 
 class AddQuestion extends Component {
     state = {
@@ -32,16 +33,18 @@ class AddQuestion extends Component {
     render() {
         const { formStatus, questionContent } = this.state
         return (
-            <div>
+            <div className="ask-div">
                 {!formStatus ?
-                    <button onClick={this.showAddForm}> ask something </button>
+                    <button className="ask-button" onClick={this.showAddForm}> ask something </button>
                     : <>
                         <form onSubmit={this.submitForm}>
-                            <input type="text" name="questionContent" value={questionContent} onChange={this.handleOnChange} placeholder="add your question here..."></input>
-
-                            <button>Add question</button>
+                            <input type="text" name="questionContent" className="input-question" value={questionContent} onChange={this.handleOnChange} placeholder="add your question here..."></input>
+                            <div className="buttons-container">
+                                <button className="ask-button" type="submit">Add question</button>
+                                <button className="ask-button" onClick={this.showAddForm}> cancel </button>
+                            </div>
                         </form>
-                        <button onClick={this.showAddForm}> cancel </button>
+
 
                     </>
                 }

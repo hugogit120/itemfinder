@@ -1,20 +1,43 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
+import service from "../services/UploadService";
 
 class Signup extends Component {
-  state = { username: "", email: "", password: "", phone: "", fullName: "" };
+  state = { username: "", email: "", password: "", phone: "", fullName: "", avatar: "" };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { username, email, password, phone, fullName } = this.state;
-    this.props.signup({ username, email, phone, password, fullName });
+    const { username, email, password, phone, fullName, avatar } = this.state;
+    this.props.signup({ username, email, phone, password, fullName, avatar });
   };
 
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
+
+  handleFileUpload = e => {
+    console.log("The file to be uploaded is: ", e.target.files[0]);
+
+    // creamos un objeto FormData que permite compilar un conjunto de pares clave/valor para enviar mediante AJAX
+    const uploadData = new FormData();
+    // image => this name has to be the same as in the model since we pass
+    // req.body to .create() method when creating a new thing in '/api/things/create' POST route
+    const uploaded = uploadData.append("image", e.target.files[0]);
+
+    console.log(uploaded)
+
+    service.handleUpload(uploadData)
+      .then(response => {
+        // console.log('response is: ', response);
+        // after the console.log we can see that response carries 'secure_url' which we can use to update the state
+        this.setState({ avatar: response.secure_url });
+      })
+      .catch(err => {
+        console.log("Error while uploading the file: ", err);
+      });
+  }
 
   render() {
     const { username, password, email, phone, fullName } = this.state;
@@ -24,6 +47,10 @@ class Signup extends Component {
         <img width="170" style={{ margin: "40px" }} src="images/item-finder-color.png" />
 
         <form onSubmit={this.handleFormSubmit}>
+
+          <input type="file" id="file-input" name="file-input"
+            onChange={(e) => this.handleFileUpload(e)} className="create-product-input" name="image" />
+          <label htmlFor="file-input">image:</label>
 
           <label className="textlabel" >Username:</label>
           <input type="text" className="field" name="username" value={username} onChange={this.handleChange} />
